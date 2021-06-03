@@ -107,15 +107,18 @@ export default function ListTasks() {
           <MobileFooterButtons>
             <Button
               onClick={(e) => getButtonSelected(e.currentTarget.name)}
-              isSelected={buttonSelected === "all" ? true : false }
+                  name="all"
+                  isSelected={buttonSelected === "all" ? true : false }
             >All</Button>
             <Button
               onClick={(e) => getButtonSelected(e.currentTarget.name)}
-              isSelected={buttonSelected === "active" ? true : false }
+                  name="active"
+                  isSelected={buttonSelected === "active" ? true : false }
             >Active</Button>
             <Button
               onClick={(e) => getButtonSelected(e.currentTarget.name)}
-              isSelected={buttonSelected === "completed" ? true : false }
+                  name="completed"
+                  isSelected={buttonSelected === "completed" ? true : false }
             >Completed</Button>
           </MobileFooterButtons>
         )}
