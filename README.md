@@ -19,3 +19,9 @@ The user is able to:
  
  npm install
 ```
+
+Click <a href="https://todo-app-peach-eta.vercel.app" target="_blank">here</a> to see the demo.
+
+<img src="https://github.com/JoaoVitorOli/todo-app/blob/master/mobile-preview.png" width="400" height="800" />
+
+<img src="https://github.com/JoaoVitorOli/todo-app/blob/master/desktop-preview.png"/>
