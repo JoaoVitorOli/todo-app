@@ -1,40 +1,57 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useEffect, useState } from 'react';
+import styled, { ThemeProvider, DefaultTheme } from "styled-components";
 
-interface AppProps {}
+import Header from "./components/Header";
+import usePersistedState from './hooks/usePersistedState';
 
-function App({}: AppProps) {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
+import dark from "./styles/themes/dark";
+import light from "./styles/themes/light";
+
+import InputTodo from './components/InputTodo';
+import ListTasks from "./components/ListTasks";
+
+import { Global } from "./styles/Globals";
+import { TasksProvider } from './context/TasksContext';
+
+const Container = styled.div`
+  width: 100%;
+
+  main {
+    position: relative;
+    top: -150px;
+  }
+`;
+
+const DragNDropToReorder = styled.span`
+  color: ${(props) => props.theme.color.buttonTxtColor};
+  margin: 1.75rem 0;
+  justify-content: center;
+  display: flex;
+`;
+
+function App() {
+  const [theme, setTheme] = usePersistedState<DefaultTheme>("theme", dark);
+
+  const toggleTheme = () => {
+    setTheme(theme.title === "light" ? dark : light);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
+    <TasksProvider>
+      <ThemeProvider theme={theme}>
+        <Container>
+          <Header toggleTheme={toggleTheme} />
+          <main>
+            <InputTodo />
+
+            <ListTasks />
+
+            <DragNDropToReorder>Drag and drop to reorder list</DragNDropToReorder>
+          </main>
+          <Global />
+        </Container>
+      </ThemeProvider>
+    </TasksProvider>
   );
 }
 
