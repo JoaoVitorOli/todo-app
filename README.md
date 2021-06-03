@@ -1,25 +1,21 @@
-# New Project
+# Todo App
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+This challenge was made with create-snowpack-app, using reactjs, typescript and styled-components. The todo item is saved in local storage.
 
-## Available Scripts
+The user is able to: 
 
-### npm start
+- Add new todos to the list
+- Mark todos as complete
+- Delete todos from the list
+- Filter by all/active/complete todos
+- Clear all completed todos
+- Toggle light and dark mode
+- Drag and drop to reorder items on the
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
-
-The page will reload if you make edits.
-You will also see any lint errors in the console.
-
-### npm run build
-
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.mjs` config file.
-
-### npm test
-
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+```
+ git clone https://github.com/JoaoVitorOli/todo-app.git
+ 
+ cd todo-app
+ 
+ npm install
+```
