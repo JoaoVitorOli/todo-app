@@ -10,7 +10,7 @@ The user is able to:
 - Filter by all/active/complete todos
 - Clear all completed todos
 - Toggle light and dark mode
-- Drag and drop to reorder items on the
+- Drag and drop to reorder items
 
 ```
  git clone https://github.com/JoaoVitorOli/todo-app.git
