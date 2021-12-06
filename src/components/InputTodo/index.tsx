@@ -33,6 +33,7 @@ export default function InputTodo() {
             type="text"
             placeholder="Create a new todo..."
             value={taskName}
+            data-test="todo-input"
             onChange={(e) => setTaskName(e.target.value)}
           />
         </form>

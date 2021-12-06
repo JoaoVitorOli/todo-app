@@ -52,7 +52,7 @@ export default function ListTasks() {
       <Wrapper>
         <Container>
           <DragDropContext onDragEnd={handleOnDragEnd}>
-            <Droppable droppableId="tasks">
+            <Droppable droppableId="tasks" data-test="droppable">
               {(provided) => (
                 filteredTasks && (
                   <div {...provided.droppableProps} ref={provided.innerRef}>
